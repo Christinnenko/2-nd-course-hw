@@ -51,8 +51,8 @@ a {
 .welcome__button {
     border-radius: 30px;
     background: #9C0332;
-    width: 234.063px;
-    height: 48.603px;
+    width: 234px;
+    height: 49px;
     flex-shrink: 0;
     color: #FFF;
     font-family: 'Montserrat', sans-serif;
@@ -64,6 +64,12 @@ a {
     padding-top: 13px;
     box-sizing: border-box;
     margin-top: 26px;
+    transition: all .3s;
+    cursor: url(img/cursor.svg), pointer;	
+}
+
+.welcome__button:hover {
+    background: #EB443F;
 }
 
 .games {
@@ -83,6 +89,8 @@ a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    transition: all .3s;
+    cursor: url(img/cursor.svg), pointer;	
 }
 
 .game2 {
@@ -92,6 +100,8 @@ a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    transition: all .3s;
+    cursor: url(img/cursor.svg), pointer;	
 }
 
 .game3 {
@@ -101,6 +111,14 @@ a {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    transition: all .3s;
+    cursor: url(img/cursor.svg), pointer;	
+}
+
+.game1:hover, 
+.game2:hover, 
+.game3:hover {
+    border: 3px solid #44D2FF;
 }
 
 .games__text {
@@ -112,4 +130,59 @@ a {
     padding-top: 236px;
     padding-left: 32px;
     padding-bottom: 32px;
+}
+
+@media (max-width: 375px) {
+    body {
+        background: url(img/mob_top.jpg);
+        background-repeat: no-repeat;
+    }
+
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .welcome {
+        height: 735px;
+        gap: 33px;
+        padding-top: 239px;
+        align-items: center;    
+        box-sizing: border-box;
+    }
+
+    .welcome__heading {
+        font-size: 32px;
+        width: 343px;
+        text-align: center;
+    }
+
+    .welcome__text {
+        font-size: 14px;
+        line-height: 22px;
+        width: 343px;
+        text-align: center;
+    }
+    
+    .welcome__button {
+        margin-top: 0;
+    }
+
+    .games {
+        height: 1221px;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+    
+    .game1, 
+    .game2,
+    .game3 {
+        width: 343px;
+        box-sizing: border-box;      
+    }
+    
+    .games__text {
+        padding-left: 15px;
+    }
 }
