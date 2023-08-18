@@ -5,7 +5,6 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000915 100%), url(img/top.jpg), lightgray 50% / cover no-repeat;
 }
 
 a {
@@ -13,11 +12,14 @@ a {
 }
 
 .center {
-    padding-left: calc(50% - 600px);
-    padding-right: calc(50% - 600px);
-  }
+    padding-left: calc(50% - 601px);
+    padding-right: calc(50% - 601px);
+}
 
 .welcome {
+    background-image: url(img/top.jpg);   
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 824px;
     display: flex;
     flex-direction: column;
@@ -27,21 +29,21 @@ a {
 }
 
 .welcome__heading {
+    max-width: 700px;
     color: #FFF;
     font-size: 64px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 800;
     line-height: normal;
-    width: 760px;
 }
 
 .welcome__text {
+    max-width: 481px;;
     color: #FFF;
     font-size: 18px;
     font-style: normal;
     font-weight: 300;
     line-height: 32px;
-    width: 481px;
 }
 
 .welcome__text-bold {
@@ -51,8 +53,8 @@ a {
 .welcome__button {
     border-radius: 30px;
     background: #9C0332;
-    width: 234.063px;
-    height: 48.603px;
+    width: 234px;
+    height: 49px;
     flex-shrink: 0;
     color: #FFF;
     font-family: 'Montserrat', sans-serif;
@@ -64,52 +66,124 @@ a {
     padding-top: 13px;
     box-sizing: border-box;
     margin-top: 26px;
+    transition: all .3s;
+    cursor: url(img/cursor.svg), pointer;	
 }
 
-.games {
+.welcome__button:hover {
+    background: #EB443F;
+}
+
+.games-wrap {
     background: #000915;
-    height: 556px;
-    flex-shrink: 0;
+    background-size: 100%;
     display: flex;
     gap: 32px;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    padding-top: 128px;
+    padding-bottom: 128px;
 }
 
-.game1 {
+.game__first,
+.game__second,
+.game__third {
     width: 379px;
+    display: inline-block;
+    height: 300px;
+    flex-shrink: 0;
     border-radius: 16px;
-    background: linear-gradient(180deg, rgba(39, 1, 15, 0.00) 0%, #001944 100%), url(img/game1.jpg), lightgray 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.game2 {
-    width: 379px;
-    border-radius: 16px;
-    background: linear-gradient(180deg, rgba(39, 1, 15, 0.00) 0%, #001944 100%), url(img/game2.jpg), lightgray 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.game3 {
-    width: 379px;
-    border-radius: 16px;
-    background: linear-gradient(180deg, rgba(39, 1, 15, 0.00) 0%, #001944 100%), url(img/game3.jpg), lightgray 50%;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.games__text {
+    padding-top: 236px;
+    padding-bottom: 32px;
+    padding-left: 32px;
+    box-sizing: border-box;
     color: #FFF;
     font-size: 24px;
     font-style: normal;
     font-weight: 600;
     line-height: 32px;
-    padding-top: 236px;
-    padding-left: 32px;
-    padding-bottom: 32px;
+    cursor: url(img/cursor.svg), pointer;
+}
+
+.game__first {
+    background: url(img/game1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.game__second {
+    background: url(img/game2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.game__third {
+    background: url(img/game3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.game__first:hover,
+.game__second:hover,
+.game__third:hover {
+    outline: 3px solid #44D2FF;
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .welcome {
+        background: url(img/mob_top.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 735px;
+        gap: 33px;
+        padding-top: 239px;
+        align-items: center;    
+        box-sizing: border-box;
+    }
+
+    .welcome__heading {
+        font-size: 32px;
+        width: 343px;
+        text-align: center;
+    }
+
+    .welcome__text {
+        font-size: 14px;
+        line-height: 22px;
+        width: 343px;
+        text-align: center;
+    }
+    
+    .welcome__button {
+        margin-top: 0;
+    }
+
+    .games-wrap {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        justify-content: center;
+    }
+    
+    .game__first,
+    .game__second,
+    .game__third {
+        width: 343px;   
+        padding-left: 14px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1300px) {
+    
+    .center {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
 }
