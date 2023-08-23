@@ -26,7 +26,7 @@ const checkParity = (number) => {
 3.1. Напишите функцию, которая принимает параметром число и выводит в консоль квадрат этого числа.
 3.2. Напишите функцию, которая принимает параметром число и возвращает квадрат этого числа. */
 
-const countSquare = (number) => console.log(number * 2);
+const countSquare = (number) => console.log(number ** 2);
 
 const countSquare2 = (number) => number ** 2;
 
@@ -38,14 +38,16 @@ const countSquare2 = (number) => number ** 2;
 
 
 const askAge = () => {
-    let age = Number(prompt('Сколько Вам лет?'));
+    let age = prompt('Сколько Вам лет?');
 
-    if (age >= 0 && age <= 12) {
+    if (age.trim() === '') {
+        alert('Вы ввели пустое значение, введите число');
+    } else if (age >= 0 && age <= 12) {
         alert('Привет, друг!');
     } else if (age >= 13) {
         alert('Добро пожаловать!');
     } else {
-        alert('Вы ввели неправильное значение');
+        alert('Вы ввели неправильное значение, введите число');
     }
 }
 
@@ -69,14 +71,16 @@ const checkCorrectNumbers = (a, b) => {
 что данная функция работает корректно и выводит правильный результат с параметрами от 0 до 10 включительно. */
 
 const checkCorrectNumber = () => {
-    let n = Number(prompt('Введите число'));
+    let n = prompt('Введите число');
 
-    if (isNaN(n)) {
+    if (n.trim() === '') {
+        return 'Переданный параметр не является числом';
+    } else if (isNaN(n)) {
         return 'Переданный параметр не является числом';
     }
     else {
-        let square = n ** 3
-        return `${n} в кубе равняется ${square}`;
+        let cube = n ** 3
+        return `${n} в кубе равняется ${cube}`;
     }
 }
 
@@ -85,13 +89,11 @@ checkCorrectNumber();
 /* Задание 7. Создайте объекты circle1 и circle2 со свойством radius. У объектов должен быть методам getArea, которое возвращает площадь круга через радиус, 
 а также getPerimeter, который возвращает периметр окружности. */
 
-const pi = 3.14;
-
 function getCircleArea() {
-    return this.radius ** 2 * pi;
+    return this.radius ** 2 * Math.PI;
 }
 function getCirclePerimeter() {
-    return this.radius * 2 * pi;
+    return this.radius * 2 * Math.PI;
 }
 
 const circle1 = {
