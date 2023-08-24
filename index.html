@@ -12,25 +12,51 @@
 </head>
 
 <body>
-    <section class="welcome center">
-        <h1 class="welcome__heading">Добро пожаловать на мой сайт !</h1>
-        <p class="welcome__text">Вам предстоит пройти несколько увлекательных игр. Если готов нажимай <span
-                class="welcome__text-bold">поехали</span> и
-            <span class="welcome__text-bold">приступай</span>
-        </p>
-        <a class="welcome__button" href="#">Поехали!</a>
-    </section>
-    <section class="games-wrap center">
-        <div class="game">
-            <a class="game__first" href="#">Игра 1</a>
-        </div>
-        <div class="game">
-            <a class="game__second" href="#">Игра 2</a>
-        </div>
-        <div class="game">
-            <a class="game__third" href="#">Игра 3</a>
+    <section class="welcome-wrap">
+        <div class="welcome">
+            <h1 class="welcome__heading">Добро пожаловать на мой сайт !</h1>
+            <p class="welcome__text">Вам предстоит пройти несколько увлекательных игр. Если готов нажимай <span
+                    class="welcome__text-bold">поехали</span> и
+                <span class="welcome__text-bold">приступай</span>
+            </p>
+            <a class="button" href="#">Поехали!</a>
         </div>
     </section>
+    <section class="games-wrap">
+        <div class="games">
+            <div class="game">
+                <a href="#"><img class="game__img" src="img/game1.png" alt="">
+                    <p class="game__text">Игра 1</p>
+                </a>
+            </div>
+            <div class="game">
+                <a href="#"><img class="game__img" src="img/game2.png" alt="">
+                    <p class="game__text">Игра 2</p>
+                </a>
+            </div>
+            <div class="game">
+                <a href="#"><img class="game__img" src="img/game3.png" alt="">
+                    <p class="game__text">Игра 3</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="games-wrap">
+        <div class="game-seasons">
+            <div class="game-seasons__content">
+                <h2 class="game-seasons__heading">Времена года!</h2>
+                <p class="game-seasons__text">Нажмите кнопку играть, введите номер месяца (от 1 до 12) и вы узнаете к
+                    какому времени
+                    года он
+                    относится</p>
+                <a onclick="defineSeason()" class="button" href="#">Играть!</a>
+            </div>
+            <div class="game-seasons__img">
+                <img class="img" src="img/video_game.svg" alt="Наушники и геймпад">
+            </div>
+        </div>
+    </section>
+    <script src="game-seasons.js"></script>
 </body>
 
 </html>
