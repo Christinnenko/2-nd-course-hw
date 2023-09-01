@@ -50,8 +50,12 @@ console.log(maxNumber);
 /* Задание 5. Создайте функцию, которая будет выводить в консоль рандомное число от 1 до 10. */
 
 const displayRandomNumber = () => {
-    let result = Math.ceil(Math.random() * 10);
-    console.log(result);
+    let randomNumber = Math.ceil(Math.random() * 10);
+
+    if (randomNumber === 0) {
+        randomNumber += 1;
+    }
+    console.log(randomNumber);
 }
 
 displayRandomNumber();
@@ -69,8 +73,8 @@ getRandomArrNumbers(12); // [9, 11, 10, 9, 3, 0] - массив заполнен
 
 const getRandomArrNumbers = (number) => {
     let resultArray = [];
-    for (i = 1; i <= (number / 2); i++) {
-        resultArray.push(Math.round(Math.random() * number));
+    for (i = 1; i <= (Math.floor(number / 2)); i++) {
+        resultArray.push(Math.floor(Math.random() * number));
     }
     return resultArray;
 }
@@ -79,13 +83,13 @@ const getRandomArrNumbers = (number) => {
 
 const getRandomInt = (num1, num2) => {
     if (num1 <= num2) {
-        return Math.round(Math.random() * (num2 - num1)) + num1;
+        return Math.floor(Math.random() * (num2 - num1)) + num1;
     } else {
-        return Math.round(Math.random() * (num1 - num2)) + num2;
+        return Math.floor(Math.random() * (num1 - num2)) + num2;
     }
 }
 
-getRandomInt(7, 7);
+getRandomInt(7, 8);
 
 
 /* Задание 8. Выведите в консоль текущую дату в стандартном режиме.Используйте один из трех рассмотренных в уроке способов. */
@@ -118,3 +122,8 @@ function displayDate(year, month, day, hours, minutes, seconds) {
 
     console.log(result);
 }
+
+
+/*
+2) В 6 задании нужно учитывать, что не все числа делятся на 2 нацело. Также стоит в рандомизации использовать Math.floor,
+ так как он округляет всегда стабильно в меньшую сторону. Round - округляет вариативно. Это же касается 7 задания. */
